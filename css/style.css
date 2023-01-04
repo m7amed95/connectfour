@@ -1,0 +1,69 @@
+body {
+  text-align: center;
+  font: optional;
+}
+#board {
+  height: 560px;
+  width: 560px;
+  border: 12px solid red;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  background-color: brown;
+  position: relative;
+  top: 70px;
+}
+.strt {
+  background-color: black;
+  border: 2px solid whitesmoke;
+  color: grey;
+  font-size: 25px;
+}
+
+.strt:hover {
+  color: beige;
+  background-color: black;
+}
+
+.circle {
+  height: 130px;
+  width: 130px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  background-color: white;
+  margin: 5px;
+  border: 5px solid brown;
+}
+
+.player1 {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  border: 4px solid black;
+  border-radius: 10%;
+  width: 15%;
+  background-color: blue;
+  position: absolute;
+  bottom: 300px;
+  left: 100px;
+}
+
+.player2 {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  border: 4px solid black;
+  border-radius: 10%;
+  width: 15%;
+  background-color: green;
+  position: absolute;
+  right: 100px;
+  bottom: 300px;
+}
+.blueChip {
+  background-color: blue;
+}
+
+.greenChip {
+  background-color: green;
+}
