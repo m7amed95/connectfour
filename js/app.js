@@ -55,7 +55,7 @@ function placeChip() {
   if (gameOver) {
     return;
   }
-
+  // click function
   let coords = this.id.split("-");
   console.log(coords);
   let r = parseInt(coords[0]);
@@ -65,7 +65,9 @@ function placeChip() {
   let circle = this;
   if (currentPlayer == player1) {
     circle.classList.add("blueChip");
+    currentPlayer = player2;
   } else {
     circle.classList.add("greenChip");
+    currentPlayer = player1;
   }
 }
