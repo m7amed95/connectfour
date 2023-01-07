@@ -6,6 +6,7 @@ let columns = 4;
 let gameOver = false;
 let board;
 let currColumns;
+
 gameBegins();
 
 function gameBegins() {
@@ -50,6 +51,53 @@ function placeChip() {
     circle.classList.add("greenChip");
     currentPlayer = player1;
   }
+  //updating the height for the column
   r -= 1;
+  // update the array
   currColumns[c] = r;
+  checkForWin();
+}
+
+function checkForWin() {
+  //horizontal
+
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < columns - 3; c++) {
+      if (board[r][c] != " ") {
+        if (
+          board[r][c] == board[r][c + 1] &&
+          board[r][c + 1] == board[r][c + 2] &&
+          board[r][c + 2] == board[r][c + 3]
+        ) {
+          callWinner(r, c);
+          return;
+        }
+      }
+    }
+  }
+  // Vertical
+  for (let c = 0; c < columns; c++) {
+    for (let r = 0; r < rows - 3; r++) {
+      if (board[r][c] != " ") {
+        if (
+          board[r][c] == board[r + 1][c] &&
+          board[r + 1][c] == board[r + 2][c] &&
+          board[r + 2][c] == board[r + 3][c]
+        ) {
+          callWinner(r, c);
+          return;
+        }
+      }
+    }
+  }
+}
+
+function callWinner(r, c) {
+  let winner = document.getElementById("winner");
+  if (board[r][c] == player1) {
+    winner.innerText = "Blue Wins";
+  } else {
+    winner.innerText = "Green Wins";
+  }
+  gameOver = true;
 }
