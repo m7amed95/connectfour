@@ -3,12 +3,12 @@ body {
   font: optional;
 }
 #board {
-  height: 560px;
-  width: 560px;
+  height: 600px;
+  width: 700px;
   border: 12px solid red;
   display: flex;
   flex-wrap: wrap;
-  margin: auto;
+  margin: 0 auto;
   background-color: brown;
   position: relative;
   top: 70px;
@@ -26,10 +26,10 @@ body {
 }
 
 .circle {
-  height: 130px;
-  width: 130px;
+  height: 80px;
+  width: 80px;
   border-radius: 50%;
-  box-sizing: border-box;
+
   background-color: white;
   margin: 5px;
   border: 5px solid brown;

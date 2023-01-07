@@ -1,8 +1,8 @@
 let player1 = "Blue";
 let player2 = "Green";
 let currentPlayer = player1;
-let rows = 4;
-let columns = 4;
+let rows = 6;
+let columns = 7;
 let gameOver = false;
 let board;
 let currColumns;
@@ -11,7 +11,7 @@ gameBegins();
 
 function gameBegins() {
   board = [];
-  currColumns = [3, 3, 3, 3];
+  currColumns = [5, 5, 5, 5];
   for (let r = 0; r < rows; r++) {
     let row = [];
     for (let c = 0; c < columns; c++) {
@@ -122,13 +122,30 @@ function checkForWin() {
     }
   }
 }
+const player1ScoreElement = document.querySelector(".player1 .score");
+let player1Score = 0;
+
+function updatePlayer1Score(score) {
+  player1Score = score;
+  player1ScoreElement.innerHTML = score;
+}
+
+const player2ScoreElement = document.querySelector(".player2 .score");
+let player2Score = 0;
+
+function updatePlayer2Score(score) {
+  player2Score = score;
+  player2ScoreElement.innerHTML = score;
+}
 
 function callWinner(r, c) {
   let winner = document.getElementById("winner");
   if (board[r][c] == player1) {
     winner.innerText = "Blue Wins";
+    updatePlayer1Score(player1Score + 1);
   } else {
     winner.innerText = "Green Wins";
+    updatePlayer2Score(player2Score + 1);
   }
   gameOver = true;
 }
