@@ -25,6 +25,18 @@ body {
   background-color: black;
 }
 
+.reset {
+  background-color: black;
+  border: 2px solid whitesmoke;
+  color: grey;
+  font-size: 25px;
+}
+
+.reset:hover {
+  color: beige;
+  background-color: black;
+}
+
 .circle {
   height: 80px;
   width: 80px;

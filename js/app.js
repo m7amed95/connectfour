@@ -5,13 +5,18 @@ let rows = 6;
 let columns = 7;
 let gameOver = false;
 let board;
-let currColumns;
+let currCol;
 
-gameBegins();
-
+let strt = document.querySelector(".strt");
+strt.addEventListener("click", gameBegins);
+strt.addEventListener("click", () => {
+  strt.style.display = "none";
+});
+document.querySelector(".reset").addEventListener("click", resetGame);
+// function that creates the board
 function gameBegins() {
   board = [];
-  currColumns = [5, 5, 5, 5];
+  currCol = [5, 5, 5, 5, 5, 5, 5];
   for (let r = 0; r < rows; r++) {
     let row = [];
     for (let c = 0; c < columns; c++) {
@@ -27,6 +32,20 @@ function gameBegins() {
   }
 }
 
+function resetGame() {
+  currentPlayer = player1;
+  gameOver = false;
+  board = [];
+  currCol = [5, 5, 5, 5, 5, 5, 5];
+  let circle = document.querySelectorAll(".circle");
+  circle.forEach((circle) => {
+    circle.classList.remove("blueChip");
+    circle.classList.remove("greenChip");
+  });
+  document.getElementById("board").innerHTML = "";
+  gameBegins();
+}
+
 function placeChip() {
   if (gameOver) {
     return;
@@ -37,7 +56,7 @@ function placeChip() {
   let r = parseInt(coords[0]);
   let c = parseInt(coords[1]);
 
-  r = currColumns[c];
+  r = currCol[c];
   if (r < 0) {
     return;
   }
@@ -54,7 +73,7 @@ function placeChip() {
   //updating the height for the column
   r -= 1;
   // update the array
-  currColumns[c] = r;
+  currCol[c] = r;
   checkForWin();
 }
 
