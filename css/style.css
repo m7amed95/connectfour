@@ -11,13 +11,15 @@ body {
   margin: 0 auto;
   background-color: brown;
   position: relative;
-  top: 70px;
+  top: 50px;
 }
+
 .strt {
   background-color: black;
   border: 2px solid whitesmoke;
   color: grey;
   font-size: 25px;
+  border-radius: 10%;
 }
 
 .strt:hover {
@@ -30,6 +32,7 @@ body {
   border: 2px solid whitesmoke;
   color: grey;
   font-size: 25px;
+  border-radius: 10%;
 }
 
 .reset:hover {
@@ -57,7 +60,7 @@ body {
   background-color: blue;
   position: absolute;
   bottom: 300px;
-  left: 100px;
+  left: 65px;
 }
 
 .player2 {
@@ -69,7 +72,7 @@ body {
   width: 15%;
   background-color: green;
   position: absolute;
-  right: 100px;
+  right: 65px;
   bottom: 300px;
 }
 .blueChip {

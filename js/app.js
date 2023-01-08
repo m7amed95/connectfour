@@ -13,6 +13,7 @@ strt.addEventListener("click", () => {
   strt.style.display = "none";
 });
 document.querySelector(".reset").addEventListener("click", resetGame);
+
 // function that creates the board
 function gameBegins() {
   board = [];
@@ -32,6 +33,7 @@ function gameBegins() {
   }
 }
 
+//function that Restarts the game
 function resetGame() {
   currentPlayer = player1;
   gameOver = false;
@@ -46,6 +48,7 @@ function resetGame() {
   gameBegins();
 }
 
+// function for placing the chip
 function placeChip() {
   if (gameOver) {
     return;
@@ -70,13 +73,12 @@ function placeChip() {
     circle.classList.add("greenChip");
     currentPlayer = player1;
   }
-  //updating the height for the column
   r -= 1;
-  // update the array
   currCol[c] = r;
   checkForWin();
 }
 
+//function that checks the winning conditions
 function checkForWin() {
   //horizontal
 
@@ -141,6 +143,8 @@ function checkForWin() {
     }
   }
 }
+
+// score board function
 const player1ScoreElement = document.querySelector(".player1 .score");
 let player1Score = 0;
 
@@ -157,6 +161,7 @@ function updatePlayer2Score(score) {
   player2ScoreElement.innerHTML = score;
 }
 
+// function that calls the winner
 function callWinner(r, c) {
   let winner = document.getElementById("winner");
   if (board[r][c] == player1) {
