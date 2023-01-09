@@ -28,6 +28,8 @@ TECHNOLOGIES USED:
 
 GETTING STARTED:
 
+https://m7amed95.github.io/connectfour/
+
 NEXT STEPS:
 
 . Add tied game feature.
